@@ -26,6 +26,7 @@ public class AllotWater implements ICommand{
              return true;
             
         } catch (CannotAllotWaterException e) {
+            System.out.println("Water can only be alloted once per month.");
                 return false;
            
         }

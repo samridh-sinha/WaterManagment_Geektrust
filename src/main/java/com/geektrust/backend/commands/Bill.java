@@ -23,7 +23,7 @@ public class Bill implements ICommand {
     
             
         } catch (BillGenerationException e) {
-
+            System.out.println("Bill can be generated only once per month.");
            return false;
         }
         
