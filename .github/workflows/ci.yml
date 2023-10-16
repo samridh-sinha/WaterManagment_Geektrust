@@ -1,0 +1,48 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+# This workflow will build a Java project with Gradle and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-gradle
+
+name: Echo workflow
+
+on: [push]
+
+jobs:
+  echo_build:
+    name: Echo Build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Echo Build
+      run: |
+        echo "Building the project..."
+        # Add your build-related messages here
+        sleep $((RANDOM % 10)) # Sleep for a random duration between 0 to 9 seconds
+        echo ${{ secrets.CI_MY_SECRET }}
+
+  echo_test:
+    name: Echo Test
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Echo Test
+      run: |
+        echo "Running tests..."
+        # Add your test-related messages here
+        sleep $((RANDOM % 10)) # Sleep for a random duration between 0 to 9 seconds
+        echo ${{ secrets.CI_MY_SECRET }}
+
+  deploy:
+    name: Echo Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Echo Deploy
+      run: |
+        echo "Deploying the project..."
+        # Add your deployment-related messages here
+        sleep $((RANDOM % 10)) # Sleep for a random duration between 0 to 9 seconds
+        echo ${{ secrets.CI_MY_SECRET }}
+        echo ${{ vars.C_MY_VARIABLE }}
